@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>待办事项</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <h1 class="title">待办事项</h1>
+        <form id="todo-form" class="todo-form" autocomplete="off">
+          <label for="todo-input" class="sr-only">输入待办事项</label>
+          <input
+            id="todo-input"
+            class="todo-input"
+            type="text"
+            name="todo"
+            placeholder="输入待办事项内容..."
+            required
+            maxlength="100"
+          />
+          <button type="submit" class="btn primary">添加</button>
+        </form>
+        <div class="toolbar">
+          <span id="todo-counter">0 项</span>
+          <div class="filters" role="group" aria-label="过滤">
+            <button type="button" class="btn filter active" data-filter="all">
+              全部
+            </button>
+            <button type="button" class="btn filter" data-filter="active">
+              未完成
+            </button>
+            <button type="button" class="btn filter" data-filter="completed">
+              已完成
+            </button>
+          </div>
+          <button type="button" id="clear-completed" class="btn danger">
+            清除已完成
+          </button>
+        </div>
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
